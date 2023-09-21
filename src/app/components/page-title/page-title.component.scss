@@ -1,0 +1,22 @@
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    var(--primary-color) 10%,
+    transparent 10%
+  );
+  border-image-slice: 1;
+  padding-bottom: 16px;
+}
+
+h3 {
+  margin-top: 24px;
+  font-size: 1.5rem;
+  color: #ffffffa8;
+  border-bottom: 3px solid #ffffffa8;
+  padding: 0 200px 60px 0;
+}

@@ -1,0 +1,43 @@
+.container {
+  color: white;
+  border-right: 1px solid white;
+  height: 100vh;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 1.5rem;
+
+  img {
+    height: 150px;
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-weight: 700;
+    font-family: "Bungee Spice", cursive;
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  ul {
+    margin: 150px 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    font-weight: 400;
+
+    li:hover {
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+  }
+}

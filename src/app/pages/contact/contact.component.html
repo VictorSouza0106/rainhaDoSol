@@ -1,0 +1,32 @@
+<div>
+  <app-page-title [titleText]="'Contate-me'">
+    Mande sua mensagem para nós, com sugestões ou ideias
+  </app-page-title>
+  <div class="form-container">
+    <form [formGroup]="form">
+      <div class="input-container">
+        <label>Nome</label>
+        <input formControlName="name" type="text" />
+      </div>
+      <div class="input-container">
+        <label>E-mail</label>
+        <input formControlName="email" type="text" />
+      </div>
+      <div class="input-container">
+        <label>Mensagem</label>
+        <textarea
+          formControlName="content"
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <button>ENVIAR</button>
+    </form>
+    <div class="info">
+      <label>Telefone</label>
+      <p>(19) 99999-9999</p>
+    </div>
+  </div>
+</div>
