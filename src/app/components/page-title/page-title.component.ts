@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PageTitleComponent implements OnInit {
   @Input() titleText: string;
-  @Input() subTitleText: string;
+  @Input() borderPosition: 'left' | 'middle' | 'right' = 'left';
+  @Input() isEmptySubtitle: boolean = false;
 
   constructor() {}
 

@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SponsorComponent } from './pages/sponsor/sponsor.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     PageTitleComponent,
     ContactComponent,
+    SponsorComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

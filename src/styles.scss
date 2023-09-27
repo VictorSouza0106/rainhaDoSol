@@ -8,6 +8,10 @@
   color: #fff;
 }
 
+strong {
+  font-weight: bold;
+}
+
 :root {
   --primary-color: #f55f27;
   --selected-primary-color: #f55e2780;
@@ -20,7 +24,10 @@
   min-height: 100vh;
 
   .router-outlet ~ * {
-    padding: 100px;
     width: 100%;
+  }
+
+  .page-content {
+    padding: 80px;
   }
 }

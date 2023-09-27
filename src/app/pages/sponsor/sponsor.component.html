@@ -1,0 +1,36 @@
+<div class="page-content" style="background-color: rgb(75, 75, 75)">
+  <app-page-title
+    [titleText]="'Torne-se um patrocinador'"
+    [borderPosition]="'middle'"
+    [isEmptySubtitle]="true"
+  ></app-page-title>
+  <p>
+    Ao se tornar um patrocnador de nossa estação de rádio, você desfrutara de
+    uma série de benefícios significativos:
+  </p>
+  <ul>
+    <li>
+      <strong>Visibilidade Multicanal: </strong> Sua marca será destacada não
+      apenas na rádio, mas também em todas as nossas plataformas digitais,
+      incluindo redes sociais, site e aplicativo. Isso proporcionará exposição
+      constante a um público diversificado e engajado
+    </li>
+    <li><strong>Audiência Cativa:</strong> Nossa</li>
+    <li><strong>Impacto Local:</strong> Se sua empresa tem um foco local</li>
+    <li>
+      <strong>Credibilidade e Associação Positiva:</strong> Ao apoiar nossa
+      estação, sua marca se associa a conteúdo de qualidade e
+      <strong>opções de personalização</strong>
+    </li>
+  </ul>
+  <div class="advertising-container">
+    <div *ngFor="let adv of ADVs">
+      <p>{{ adv.name }}</p>
+      <p>R$ {{ adv.price }},00</p>
+    </div>
+    <div *ngFor="let adv of ADVs">
+      <p>{{ adv.name }}</p>
+      <p>R$ {{ adv.price }},00</p>
+    </div>
+  </div>
+</div>

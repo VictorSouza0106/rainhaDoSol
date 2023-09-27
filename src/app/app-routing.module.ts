@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SponsorComponent } from './pages/sponsor/sponsor.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'contato',
     component: ContactComponent,
+  },
+  {
+    path: `patrocinador`,
+    component: SponsorComponent,
   },
   {
     path: '**',

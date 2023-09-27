@@ -1,16 +1,39 @@
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-
   border-bottom: 3px solid transparent;
+  padding-bottom: 16px;
+}
+
+.left {
   border-image: linear-gradient(
     90deg,
     var(--primary-color) 10%,
     transparent 10%
   );
   border-image-slice: 1;
-  padding-bottom: 16px;
+}
+
+.middle {
+  text-align: center;
+  border-image: linear-gradient(
+    90deg,
+    transparent 35%,
+    var(--primary-color) 35%,
+    var(--primary-color) 60%,
+    transparent 60%
+  );
+  border-image-slice: 1;
+}
+
+.right {
+  border-image: linear-gradient(
+    90deg,
+    transparent 90%,
+    var(--primary-color) 90%
+  );
+  border-image-slice: 1;
 }
 
 h3 {
