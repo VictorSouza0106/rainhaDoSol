@@ -1,5 +1,5 @@
 <div class="main-div">
-  <aside>
+  <aside *ngIf="!isMobile">
     <app-side-bar (onNavSelected)="goToURL($event)"></app-side-bar>
   </aside>
   <router-outlet class="router-outlet"></router-outlet>

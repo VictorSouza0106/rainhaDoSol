@@ -25,6 +25,7 @@ strong {
 
   .router-outlet ~ * {
     width: 100%;
+    overflow: hidden;
   }
 
   .page-content {

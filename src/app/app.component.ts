@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { WindowService } from './sevices/window.service';
+
+const MOBILE_WIDTH = 800;
 
 @Component({
   selector: 'app-root',
@@ -7,11 +10,28 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'rainhaDoSol';
+  constructor(private router: Router, private windowService: WindowService) {}
 
-  constructor(private router: Router) {}
+  isMobile: boolean = window.screen.width < MOBILE_WIDTH;
 
   public goToURL(url: string): void {
     this.router.navigateByUrl(url);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    if (window.screen.width < MOBILE_WIDTH)
+      this.windowService.isMobile.next(true);
+    else this.windowService.isMobile.next(false);
+    console.log('window ->', window.screen.width);
+  }
+
+  ngOnInit(): void {
+    this.windowService.isMobile.subscribe((isMobile) => {
+      this.isMobile = isMobile;
+      console.log('IS MOBILE ->', isMobile);
+    });
+
+    if (this.isMobile) this.router.navigateByUrl('dev');
   }
 }
