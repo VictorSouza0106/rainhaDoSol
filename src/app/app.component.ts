@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { WindowService } from './sevices/window.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 const MOBILE_WIDTH = 800;
 
@@ -13,6 +14,8 @@ export class AppComponent {
   constructor(private router: Router, private windowService: WindowService) {}
 
   isMobile: boolean = window.screen.width < MOBILE_WIDTH;
+  isHomePage: boolean = false;
+  isMenuOpen: boolean = false;
 
   public goToURL(url: string): void {
     this.router.navigateByUrl(url);
@@ -32,6 +35,14 @@ export class AppComponent {
       console.log('IS MOBILE ->', isMobile);
     });
 
-    if (this.isMobile) this.router.navigateByUrl('dev');
+    console.log(this.router.url);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/') this.isHomePage = true;
+      }
+    });
+  }
+  public changeMenuState() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

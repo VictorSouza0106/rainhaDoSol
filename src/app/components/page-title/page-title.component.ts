@@ -9,6 +9,7 @@ export class PageTitleComponent implements OnInit {
   @Input() titleText: string;
   @Input() borderPosition: 'left' | 'middle' | 'right' = 'left';
   @Input() isEmptySubtitle: boolean = false;
+  @Input() fontSize: string = '48px';
 
   constructor() {}
 

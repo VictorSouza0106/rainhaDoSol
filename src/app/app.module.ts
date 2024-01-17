@@ -10,7 +10,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SponsorComponent } from './pages/sponsor/sponsor.component';
-import { DevelopmentComponent } from './pages/development/development.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,14 @@ import { DevelopmentComponent } from './pages/development/development.component'
     PageTitleComponent,
     ContactComponent,
     SponsorComponent,
-    DevelopmentComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,10 +1,41 @@
-<div class="page-content">
-  <app-page-title [titleText]="'Esteja por dentro das lives!'"
+<div class="page-content" [ngClass]="{ 'mobile-content': isMobile }">
+  <app-page-title *ngIf="!isMobile" [titleText]="'Esteja por dentro das lives!'"
     >Abra os ouvidos para o conhecimento e sintonize nas lices da nossa rádio,
     onde os melhores especialistas se unem para iluminar todas as áreas da sua
     vida!</app-page-title
   >
+  <div
+    *ngIf="isMobile"
+    style="
+      margin-top: 36px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-align: center;
+    "
+  >
+    <h2 x>Esteja por dentro das</h2>
+    <span style="color: var(--primary-color); font-size: 2em">Lives!</span>
+  </div>
+
   <div div class="btn-container">
-    <button>Clique e assista a live</button>
+    <button *ngIf="!isMobile">Clique e assista a live</button>
+    <button
+      style="
+        font-size: 0.9rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      "
+      *ngIf="isMobile"
+    >
+      <span style="text-align: center; width: 100%">Clique para assistir</span>
+    </button>
+  </div>
+  <div>
+    <iframe
+      style="width: 100%; overflow: hidden"
+      height="700"
+      src="https://rainhadosolfm.com.br/"
+    ></iframe>
   </div>
 </div>

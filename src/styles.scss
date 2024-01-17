@@ -1,5 +1,9 @@
 @import "reset.scss";
 
+// ICONS
+@import url("https://cdn.materialdesignicons.com/5.1.45/css/materialdesignicons.min.css");
+
+// Fontes
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Bungee+Spice&family=Roboto:wght@400;700;900&display=swap");
 
@@ -30,5 +34,9 @@ strong {
 
   .page-content {
     padding: 80px;
+  }
+
+  .mobile-content {
+    padding: 12px;
   }
 }

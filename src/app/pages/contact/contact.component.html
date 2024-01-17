@@ -1,5 +1,10 @@
-<div class="page-content">
-  <app-page-title [titleText]="'Contate-me'">
+<div class="page-content" [ngClass]="{ 'mobile-content': isMobile }">
+  <app-page-title
+    [ngStyle]="{ 'margin-top': isMobile ? '50px' : '0px' }"
+    fontSize="2rem"
+    [titleText]="'Contate-me'"
+    [borderPosition]="isMobile ? 'middle' : 'left'"
+  >
     Mande sua mensagem para nós, com sugestões ou ideias
   </app-page-title>
   <div class="form-container">
@@ -22,9 +27,9 @@
           rows="10"
         ></textarea>
       </div>
-      <button>ENVIAR</button>
+      <button (click)="onSubmit()">ENVIAR</button>
     </form>
-    <div class="info">
+    <div *ngIf="!isMobile" class="info">
       <label>Telefone</label>
       <p>(19) 99999-9999</p>
     </div>

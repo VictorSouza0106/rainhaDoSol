@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ADVType } from 'src/app/interfaces/advertising';
+import { WindowService } from 'src/app/sevices/window.service';
 
 @Component({
   selector: 'app-sponsor',
@@ -13,20 +14,14 @@ export class SponsorComponent implements OnInit {
       price: 800,
     },
     {
-      name: 'Primeiro serviço',
-      price: 35,
-    },
-    {
       name: 'Anuncio 24h na TV RAINHA',
-      price: 150,
-    },
-    {
-      name: 'Segundo serviço',
       price: 150,
     },
   ];
 
-  constructor() {}
+  constructor(private windowService: WindowService) {}
+
+  isMobile: boolean = window.screen.width < this.windowService.MOBILE_WIDTH;
 
   ngOnInit(): void {}
 }

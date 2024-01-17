@@ -1,5 +1,7 @@
 <div>
-  <h1 [ngClass]="borderPosition">{{ titleText }}</h1>
+  <h1 [ngStyle]="{ 'font-size': fontSize }" [ngClass]="borderPosition">
+    {{ titleText }}
+  </h1>
   <h3 *ngIf="!isEmptySubtitle">
     <ng-content></ng-content>
   </h3>

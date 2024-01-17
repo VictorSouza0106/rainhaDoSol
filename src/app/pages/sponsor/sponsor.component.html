@@ -1,36 +1,70 @@
-<div class="page-content" style="background-color: rgb(75, 75, 75)">
+<div class="page-content" [ngClass]="{ 'mobile-content': isMobile }">
   <app-page-title
+    *ngIf="!isMobile"
     [titleText]="'Torne-se um patrocinador'"
     [borderPosition]="'middle'"
     [isEmptySubtitle]="true"
   ></app-page-title>
-  <p>
+  <div *ngIf="isMobile" style="margin: 24px">
+    <h1 style="font-size: 1.3em; text-align: center; font-weight: bold">
+      Torne-se um
+    </h1>
+    <h2
+      style="
+        font-size: 2.3em;
+        text-align: center;
+        color: var(--primary-color);
+        font-weight: bold;
+      "
+    >
+      Patrocinador
+    </h2>
+  </div>
+  <p [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
     Ao se tornar um patrocnador de nossa estação de rádio, você desfrutara de
     uma série de benefícios significativos:
   </p>
   <ul>
-    <li>
+    <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+      <i class="mdi mdi-eye-outline"></i>
       <strong>Visibilidade Multicanal: </strong> Sua marca será destacada não
-      apenas na rádio, mas também em todas as nossas plataformas digitais,
-      incluindo redes sociais, site e aplicativo. Isso proporcionará exposição
-      constante a um público diversificado e engajado
+      apenas na rádio, mas também em todas as nossas plataformas digitais
+      <span *ngIf="!isMobile"
+        >, incluindo redes sociais, site e aplicativo. Isso proporcionará
+        exposição constante a um público diversificado e engajado</span
+      >
     </li>
-    <li><strong>Audiência Cativa:</strong> Nossa</li>
-    <li><strong>Impacto Local:</strong> Se sua empresa tem um foco local</li>
-    <li>
+    <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+      <i class="mdi mdi-account"></i>
+      <strong>Audiência Cativa:</strong> Nossa
+    </li>
+    <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+      <i class="mdi mdi-home"></i>
+      <strong>Impacto Local:</strong> Se sua empresa tem um foco local
+    </li>
+    <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+      <i class="mdi mdi-account-multiple-check"></i>
       <strong>Credibilidade e Associação Positiva:</strong> Ao apoiar nossa
       estação, sua marca se associa a conteúdo de qualidade e
       <strong>opções de personalização</strong>
     </li>
   </ul>
-  <div class="advertising-container">
-    <div *ngFor="let adv of ADVs">
-      <p>{{ adv.name }}</p>
-      <p>R$ {{ adv.price }},00</p>
-    </div>
-    <div *ngFor="let adv of ADVs">
-      <p>{{ adv.name }}</p>
-      <p>R$ {{ adv.price }},00</p>
-    </div>
+  <div style="margin-top: 24px">
+    <app-page-title
+      fontSize="2.5rem"
+      [titleText]="'Anuncie aqui!'"
+      [borderPosition]="'middle'"
+      [isEmptySubtitle]="true"
+    ></app-page-title>
+  </div>
+  <div>
+    <ul style="list-style-type: disc">
+      <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+        Anuncio na Rádio (Mensal)
+      </li>
+      <li [ngStyle]="{ 'font-size': isMobile ? '1.1rem' : '1.5rem' }">
+        Anuncio 24h na TV RAINHA
+      </li>
+    </ul>
   </div>
 </div>

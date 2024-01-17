@@ -1,6 +1,101 @@
 <div class="main-div">
-  <aside *ngIf="!isMobile">
-    <app-side-bar (onNavSelected)="goToURL($event)"></app-side-bar>
-  </aside>
-  <router-outlet class="router-outlet"></router-outlet>
+  <div *ngIf="!isMobile" style="display: flex; width: 100%">
+    <aside>
+      <app-side-bar (onNavSelected)="goToURL($event)"></app-side-bar>
+    </aside>
+    <router-outlet class="router-outlet"></router-outlet>
+  </div>
+
+  <div style="position: relative; width: 100%" *ngIf="isMobile">
+    <div style="display: flex; justify-content: center; margin-top: 24px">
+      <button
+        style="position: absolute; left: 15px; top: 24px"
+        (click)="changeMenuState()"
+      >
+        <i class="mdi mdi-menu" style="font-size: 36px"></i>
+      </button>
+      <div
+        style="
+          position: absolute;
+          background-color: #000;
+          width: 100%;
+          top: 0;
+          transition: all 0.4s;
+        "
+        [ngStyle]="{
+          transform: isMenuOpen ? 'translateY(0px)' : 'translateY(-255px)'
+        }"
+      >
+        <nav>
+          <ul style="display: flex; flex-direction: column; font-size: 1.3rem">
+            <li style="padding: 15px 0 0 15px">
+              <i
+                class="mdi mdi-close"
+                style="font-size: 36px"
+                (click)="changeMenuState()"
+              ></i>
+            </li>
+            <li
+              style="
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                justify-content: center;
+                padding: 12px;
+              "
+              (click)="goToURL('')"
+            >
+              INÍCIO
+            </li>
+            <li
+              style="
+                border-bottom: 1px solid #fff;
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                justify-content: center;
+                padding: 12px;
+              "
+              (click)="goToURL('sobre')"
+            >
+              SOBRE MIM
+            </li>
+            <li
+              style="
+                border-bottom: 1px solid #fff;
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                justify-content: center;
+                padding: 12px;
+              "
+              (click)="goToURL('contato')"
+            >
+              CONTATO
+            </li>
+            <li
+              style="
+                border-bottom: 1px solid #fff;
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                justify-content: center;
+                padding: 12px;
+              "
+              (click)="goToURL('patrocinador')"
+            >
+              ENGAJE SEU NEGÓCIO
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <img
+        src="../assets/logo.png"
+        [ngStyle]="{ width: isHomePage ? '60vw' : '40vw' }"
+      />
+    </div>
+    <router-outlet class="router-outlet"></router-outlet>
+  </div>
 </div>

@@ -1,7 +1,40 @@
-<div class="page-content">
-  <app-page-title [titleText]="'A hístoria da radio rainha do sol'">
-    conheça a hístoria de Anselmo e descubra como a Rainha Do Sol impactou a
-    vida de vários brasileiros. Sua hístoriaemocionante, de superação e
+<div class="page-content" [ngClass]="{ 'mobile-content': isMobile }">
+  <app-page-title
+    *ngIf="!isMobile"
+    [titleText]="'A hístoria da radio rainha do sol'"
+  >
+    Conheça a hístoria de Anselmo e descubra como a Rainha Do Sol impactou a
+    vida de vários brasileiros. Sua hístoria emocionante, de superação e
     surpresas que a vida vem trazendo para sua vida
   </app-page-title>
+  <div *ngIf="isMobile" style="margin: 24px">
+    <p style="font-size: 1.3em; font-weight: bold; text-align: center">
+      Historia da Radio
+    </p>
+    <p
+      style="
+        font-size: 2.3em;
+        color: var(--primary-color);
+        border-bottom: 1px solid #fff;
+        padding-bottom: 6px;
+        font-weight: bold;
+        text-align: center;
+      "
+    >
+      Rainha do sol
+    </p>
+    <p style="margin: 24px 0">
+      Conheça a hístoria de Anselmo e descubra como a
+      <span style="color: var(--primary-color)">Rainha Do Sol</span> impactou a
+      vida de vários brasileiros. Sua hístoria emocionante, de superação e
+      surpresas que a vida vem trazendo para sua vida
+    </p>
+  </div>
+  <div>
+    <iframe
+      style="aspect-ratio: 16/9"
+      width="100%"
+      src="https://www.youtube.com/embed/JzljRX62dMU?si=eVUnb6YgfE39Acha"
+    ></iframe>
+  </div>
 </div>
